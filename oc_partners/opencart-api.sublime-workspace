@@ -1,0 +1,912 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"op",
+				"option_model"
+			],
+			[
+				"E",
+				"ERROR"
+			],
+			[
+				"p",
+				"print"
+			],
+			[
+				"cl",
+				"clean_result_0"
+			],
+			[
+				"o",
+				"options"
+			],
+			[
+				"product",
+				"product_id"
+			],
+			[
+				"pr",
+				"product_id"
+			],
+			[
+				"wi",
+				"without_"
+			],
+			[
+				"w",
+				"with_"
+			],
+			[
+				"mod",
+				"model_options_and_quantity"
+			],
+			[
+				"pro",
+				"products_in_odoo"
+			],
+			[
+				"a",
+				"append"
+			],
+			[
+				"product_",
+				"product_option"
+			],
+			[
+				"e",
+				"error"
+			],
+			[
+				"data_",
+				"data_2_update"
+			],
+			[
+				"st",
+				"str"
+			],
+			[
+				"co",
+				"course"
+			],
+			[
+				"_",
+				"_name"
+			],
+			[
+				"d",
+				"debug"
+			],
+			[
+				"up",
+				"update"
+			],
+			[
+				"status",
+				"status"
+			],
+			[
+				"s",
+				"status"
+			],
+			[
+				"order",
+				"order_data"
+			],
+			[
+				"defa",
+				"default_code"
+			],
+			[
+				"date",
+				"date_order"
+			],
+			[
+				"or",
+				"order"
+			],
+			[
+				"q",
+				"quantity"
+			],
+			[
+				"stock",
+				"stock_location"
+			],
+			[
+				"in",
+				"invisible"
+			],
+			[
+				"vie",
+				"view_id"
+			],
+			[
+				"l",
+				"lst_price"
+			],
+			[
+				"store",
+				"storehouse"
+			],
+			[
+				"pos",
+				"pos_category"
+			],
+			[
+				"ca",
+				"category_exist"
+			],
+			[
+				"li",
+				"link\tTag"
+			],
+			[
+				"dat",
+				"datetime"
+			],
+			[
+				"tu",
+				"tutorial_content"
+			],
+			[
+				"fie",
+				"fields"
+			],
+			[
+				"Tu",
+				"TutorialAdmin"
+			],
+			[
+				"tuto",
+				"tutorial_title"
+			],
+			[
+				"sta",
+				"status_id"
+			],
+			[
+				"shipping_c",
+				"shipping_country"
+			],
+			[
+				"client",
+				"client_state_region"
+			],
+			[
+				"cli",
+				"client_country"
+			],
+			[
+				"con",
+				"content"
+			],
+			[
+				"r",
+				"root"
+			],
+			[
+				"da",
+				"datetime"
+			],
+			[
+				"c",
+				"child"
+			],
+			[
+				"re",
+				"result"
+			],
+			[
+				"hea",
+				"headers"
+			],
+			[
+				"order_id",
+				"order_id_customer"
+			],
+			[
+				"ne",
+				"new_orders"
+			],
+			[
+				"C",
+				"chargeAmount"
+			],
+			[
+				"la",
+				"layer1"
+			],
+			[
+				"model_",
+				"model_data"
+			],
+			[
+				"pri",
+				"private_key"
+			],
+			[
+				"consu",
+				"consumer_channel_type"
+			],
+			[
+				"user",
+				"user_name"
+			],
+			[
+				"f",
+				"fields"
+			],
+			[
+				"he",
+				"hex_string"
+			],
+			[
+				"ti",
+				"timestamp"
+			],
+			[
+				"na",
+				"name_additional"
+			],
+			[
+				"t",
+				"t-call"
+			],
+			[
+				"i",
+				"iteraction"
+			],
+			[
+				"add",
+				"added_before"
+			],
+			[
+				"csv",
+				"csvfile"
+			],
+			[
+				"try",
+				"try\tTry/Except"
+			],
+			[
+				"T",
+				"True"
+			],
+			[
+				"cust",
+				"customer_data"
+			],
+			[
+				"web",
+				"website_sale"
+			],
+			[
+				"cu",
+				"customer"
+			],
+			[
+				"se",
+				"self"
+			],
+			[
+				"customer",
+				"customer-login"
+			],
+			[
+				"lo",
+				"login"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "models/models.py",
+			"settings":
+			{
+				"buffer_size": 34785,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/run/user/1000/gvfs/ftp:host=67.225.133.86,user=mmtest/public_html/catalog/controller/api/custom.php",
+			"settings":
+			{
+				"buffer_size": 7515,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/run/user/1000/gvfs/ftp:host=67.225.133.86,user=mmtest/public_html/catalog/model/catalog/product.php",
+			"settings":
+			{
+				"buffer_size": 29833,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/views.xml",
+			"settings":
+			{
+				"buffer_size": 3488,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Python/Python.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/run/user/1000/gvfs/ftp:host=67.225.133.86,user=mmtest/public_html/catalog/controller/api/login.php",
+		"/home/vitaliy/work Minsk/work/odoo opencart API/files for opencart CHECK 2 customorders/products/1/api/custom.php",
+		"/run/user/1000/gvfs/ftp:host=67.225.133.86,user=mmtest/public_html/catalog/language/en-gb/api/product.php",
+		"/run/user/1000/gvfs/ftp:host=67.225.133.86,user=mmtest/public_html/catalog/controller/api/customorder.php",
+		"/home/vitaliy/work Minsk/work/odoo opencart API/files for opencart CHECK 2 customorders/products/3/product.php",
+		"/run/user/1000/gvfs/ftp:host=67.225.133.86,user=mmtest/public_html/catalog/model/api/product.php",
+		"/home/vitaliy/work Minsk/work/odoo opencart API/files for opencart CHECK 2 customorders/products/2/custom.php",
+		"/opt/odoo/addons/storehouse/models/models.py",
+		"/home/vitaliy/Desktop/test4.py",
+		"/opt/odoo/addons/opencart_quantity/models/models.py",
+		"/home/vitaliy/Downloads/storehouse/models/models.py",
+		"/home/vitaliy/Desktop/test3.py",
+		"/home/vitaliy/Desktop/test2.py",
+		"/opt/odoo/addons/storehouse_import/models/models.py",
+		"/opt/odoo/addons/website/models/res_partner.py",
+		"/opt/odoo/addons/website/models/website.py",
+		"/opt/odoo/addons/website/models/customer_logging.py",
+		"/opt/odoo/addons/website/views/customer_login.xml",
+		"/opt/odoo/addons/website/views/website_views.xml",
+		"/opt/odoo/addons/website/controllers/main.py",
+		"/opt/odoo/addons/web/controllers/main.py",
+		"/run/user/1000/gvfs/ftp:host=67.225.133.86,user=mmtest/public_html/catalog/model/catalog/product.php",
+		"/home/vitaliy/Desktop/result.py",
+		"/run/user/1000/gvfs/ftp:host=67.225.133.86,user=mmtest/public_html/catalog/controller/api/order.php",
+		"/run/user/1000/gvfs/ftp:host=67.225.133.86,user=mmtest/public_html/catalog/controller/sale/order.php",
+		"/run/user/1000/gvfs/ftp:host=67.225.133.86,user=mmtest/public_html/catalog/controller/product/product.php",
+		"/home/vitaliy/Desktop/new.py",
+		"/run/user/1000/gvfs/sftp:host=109.74.203.196,user=root/var/www/mysite/main/views.py",
+		"/run/user/1000/gvfs/sftp:host=109.74.203.196,user=root/var/www/mysite/main/models.py",
+		"/run/user/1000/gvfs/ftp:host=67.225.133.86,user=mmtest/public_html/catalog/controller/api/product.php",
+		"/home/vitaliy/work Minsk/work/odoo opencart API/files for opencart CHECK 2 customorders/quantity/3/product.php",
+		"/run/user/1000/gvfs/ftp:host=67.225.133.86,user=mmtest/public_html/catalog/controller/api/custom.php",
+		"/opt/odoo/addons/opencart_connection/models/models.py",
+		"/home/vitaliy/work Minsk/work/odoo opencart API/files for opencart CHECK 2 customorders/orders/4/sale/order.php",
+		"/home/vitaliy/work Minsk/work/odoo opencart API/files for opencart CHECK 2 customorders/orders/3/sale/order.php",
+		"/home/vitaliy/work Minsk/work/odoo opencart API/files for opencart CHECK 2 customorders/products/2/customorder.php",
+		"/run/user/1000/gvfs/ftp:host=67.225.133.86,user=mmtest/public_html/catalog/language/en-gb/api/custom.php",
+		"/opt/odoo/addons/opencart_quantity/views/views.xml",
+		"/home/vitaliy/Desktop/data.py",
+		"/run/user/1000/gvfs/ftp:host=67.225.133.86,user=mmtest/public_html/admin/model/catalog/product.php",
+		"/opt/odoo/addons/opencart_quantity/views/templates.xml",
+		"/opt/odoo/addons/opencart_connection/views/views.xml",
+		"/opt/odoo/addons/opencart_quantity/__manifest__.py",
+		"/run/user/1000/gvfs/ftp:host=67.225.133.86,user=mmtest/public_html/catalog/model/sale/order.php",
+		"/run/user/1000/gvfs/ftp:host=67.225.133.86,user=mmtest/public_html/catalog/controller/api/customorders.php",
+		"/home/vitaliy/work Minsk/work/odoo opencart API/files for opencart CHECK 2 customorders/1/api/custom.php",
+		"/home/vitaliy/work Minsk/work/odoo opencart API/files for opencart CHECK 2 customorders/2/customorder.php",
+		"/home/vitaliy/work Minsk/work/odoo opencart API/files for opencart CHECK 2 customorders/3/sale/order.php",
+		"/home/vitaliy/work Minsk/work/odoo opencart API/files for opencart CHECK 2 customorders/4/sale/order.php",
+		"/run/user/1000/gvfs/ftp:host=67.225.133.86,user=mmtest/public_html/admin/controller/catalog/product.php",
+		"/opt/odoo/addons/opencart_connection/__manifest__.py",
+		"/home/vitaliy/Desktop/1.html",
+		"/run/user/1000/gvfs/ftp:host=67.225.133.86,user=mmtest/public_html/catalog/language/english/api/custom.php",
+		"/opt/odoo/addons/opencart_connection/__init__.py",
+		"/opt/odoo/addons/openacademy/models/models.py",
+		"/opt/odoo/addons/openacademy/wizard.py",
+		"/opt/odoo/addons/openacademy/views/openacademy.xml",
+		"/opt/odoo/addons/openacademy/__init__.py",
+		"/opt/odoo/addons/openacademy/reports.xml",
+		"/opt/odoo/addons/openacademy/rps_xml.py",
+		"/opt/odoo/addons/openacademy/rpc_json.py",
+		"/opt/odoo/addons/openacademy/views/session_board.xml",
+		"/opt/odoo/addons/openacademy/__manifest__.py",
+		"/opt/odoo/addons/openacademy/rps.py",
+		"/opt/odoo/addons/openacademy/i18n/ru.csv",
+		"/home/vitaliy/Downloads/all.csv",
+		"/opt/odoo/addons/openacademy/security/security.xml",
+		"/opt/odoo/addons/openacademy/templates.xml",
+		"/opt/odoo/addons/openacademy/security/ir.model.access.csv",
+		"/opt/odoo/addons/openacademy/views/session_workflow.xml",
+		"/opt/odoo/addons/openacademy/views/partner.xml",
+		"/opt/odoo/addons/openacademy/models/__init__.py",
+		"/opt/odoo/addons/openacademy/partner.py",
+		"/opt/odoo/addons/openacademy/test_courses.xml",
+		"/home/vitaliy/Desktop/test.py",
+		"/opt/odoo/addons/resource/models/resource.py",
+		"/opt/odoo/addons/openacademy/models/partner.py",
+		"/opt/odoo/addons/academy/models/partner.py",
+		"/opt/odoo/addons/academy/views/partner.xml",
+		"/run/user/1000/gvfs/sftp:host=109.74.203.196,user=root/var/www/mysite/mysite/settings.py",
+		"/opt/odoo/addons/point_of_sale/models/pos_order.py",
+		"/opt/odoo/addons/point_of_sale/models/product.py",
+		"/opt/odoo/addons/point_of_sale/views/st_product_view.xml",
+		"/opt/odoo/addons/point_of_sale/views/pos_order_view.xml",
+		"/opt/odoo/addons/point_of_sale/views/point_of_sale_view.xml",
+		"/opt/odoo/addons/point_of_sale/views/product_view.xml",
+		"/opt/odoo/addons/point_of_sale/__manifest__.py",
+		"/opt/odoo/addons/point_of_sale/data/point_of_sale_data.xml",
+		"/opt/odoo/addons/point_of_sale/data/point_of_sale_demo.xml",
+		"/opt/odoo/addons/point_of_sale/views/pos_templates.xml",
+		"/opt/odoo/addons/product/views/product_template_views.xml",
+		"/opt/odoo/addons/point_of_sale/views/temp_product.xml",
+		"/opt/odoo/addons/product/models/product_template.py",
+		"/opt/odoo/addons/product/models/product.py",
+		"/opt/odoo/addons/product/models/product_attribute.py",
+		"/opt/odoo/addons/product/views/product_views.xml",
+		"/opt/odoo/addons/product/__manifest__.py",
+		"/opt/odoo/addons/stock/views/product_views.xml",
+		"/opt/odoo/addons/stock/views/stock_menu_views.xml",
+		"/opt/odoo/addons/product/views/product_uom_views.xml",
+		"/opt/odoo/addons/storehouse/__manifest__.py",
+		"/opt/odoo/addons/storehouse/views/box_inventory.xml",
+		"/opt/odoo/addons/storehouse/views/products_virtual.xml",
+		"/opt/odoo/addons/storehouse/views/views.xml",
+		"/opt/odoo/addons/storehouse/views/templates.xml",
+		"/opt/odoo/addons/point_of_sale/views/pos_category_view.xml",
+		"/opt/odoo/addons/point_of_sale/views/pos_config_view.xml",
+		"/opt/odoo/addons/point_of_sale/views/point_of_sale_dashboard.xml",
+		"/opt/odoo/addons/point_of_sale/static/src/xml/pos.xml",
+		"/opt/odoo/addons/point_of_sale/views/point_of_sale.xml",
+		"/opt/odoo/addons/point_of_sale/views/point_of_sale_template.xml",
+		"/opt/odoo/addons/point_of_sale/static/src/less/pos_dashboard.less",
+		"/opt/odoo/addons/point_of_sale/models/__init__.py",
+		"/home/vitaliy/Desktop/mysite/mysite/settings.py",
+		"/home/vitaliy/Desktop/mysite/main/admin.py",
+		"/home/vitaliy/Desktop/mysite/main/templates/main/home.html",
+		"/home/vitaliy/Desktop/mysite/main/views.py",
+		"/home/vitaliy/Desktop/mysite/main/models.py",
+		"/home/vitaliy/Desktop/mysite/mysite/urls.py",
+		"/home/vitaliy/Desktop/mysite/main/urls.py",
+		"/opt/odoo/addons/mail/models/mail_thread.py",
+		"/opt/odoo/addons/storehouse/security/ir.model.access.csv",
+		"/opt/odoo/addons/stock_account/__manifest__.py",
+		"/opt/odoo/addons/stock/__manifest__.py",
+		"/opt/odoo/addons/barcodes/__manifest__.py",
+		"/opt/odoo/addons/overstock_connection/models/models.py",
+		"/opt/odoo/addons/overstock_connection/views/views.xml",
+		"/home/vitaliy/work Minsk/work/Overstock API/api.py"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"{'ERROR_description'",
+			"}",
+			"A227WHITE",
+			"}",
+			"products_with_options_result",
+			"partner",
+			"products_with_options_result",
+			"sku",
+			"_logger.debug",
+			"}",
+			"319",
+			"get_product_options_info",
+			"class product",
+			"update",
+			"A227",
+			"GcP",
+			"A227",
+			"write",
+			"model_options_and_quantity",
+			"model =",
+			"products_without_options",
+			"A228-301",
+			"model",
+			"error",
+			"'product_id",
+			"A228-301",
+			"class product",
+			"customer",
+			"model",
+			"error",
+			"model",
+			"get_product_options_info",
+			"getproducts",
+			"A500",
+			"A220XL",
+			"A224",
+			"A216",
+			"A227",
+			"\"status\":\"0\"",
+			"\"status\":",
+			"status",
+			"main_opencart_job_orders",
+			"main_opencart_job_quantity",
+			"select",
+			"opencart_quantity.menu_root",
+			"opencart_quantity.menu_list",
+			"opencart_quantity.opencart_list_form_view",
+			"opencart_quantity.opencart_quantity_list_view",
+			"opencart_quantity.opencart_settings_list_view",
+			"editProduct",
+			"customorder",
+			"model",
+			"$this->load->model('catalog/product');",
+			"language->load('api/product')",
+			"language->load('catalog/product')",
+			"quantity",
+			"cancel_data",
+			"status_order",
+			"required",
+			"responsible",
+			"Form",
+			"action_draft",
+			"<label for=\"attendee_ids\"/>",
+			"class product",
+			"stock_location",
+			"class product",
+			"status_id",
+			"order['order_id']",
+			"order_id_customer",
+			"update",
+			"order_status",
+			"order['status_order']",
+			"order_status",
+			"_logger.debug('##############",
+			"'status','='",
+			"status_order",
+			"status_order_odoo",
+			"order_status",
+			"storehouse.status",
+			"status_order_odoo",
+			"status_id",
+			"clients.order.customer.id.fkey",
+			"customer id fkey",
+			"customer_id_fkey",
+			"clients_order_customer_id_fkey",
+			"storehouse_clients_order_customer_id_fkey",
+			"order_id",
+			"price_unit",
+			"data_parsed",
+			"search",
+			"class clients_order",
+			"sudo",
+			"invi",
+			"field",
+			"order",
+			"storehouse.order",
+			"dele",
+			"unlink",
+			"fruits_vegetables",
+			"class product",
+			"product_product_22",
+			"view_template_property_form",
+			"product_product_action",
+			"action_client_pos_menu",
+			"products_2_POS_tree_view",
+			"products_2_POS.view",
+			"product.template",
+			"class product.template",
+			"product.template",
+			"product.template.product.tree",
+			"product_template_tree_view",
+			"class product",
+			"location",
+			"form",
+			"product_template_form_view",
+			"product_product_t",
+			"product_product_form",
+			"product_template_form_view",
+			"product_product_action",
+			"product_product_tree_view_2",
+			"product_product_tr",
+			"product_product_tree_view",
+			"product.product_product_tree_view",
+			"product.product",
+			"product_product_tree_view",
+			"product_product_tree_viewv",
+			"tree",
+			"internal refe"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "models/models.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 34785,
+						"regions":
+						{
+							"bookmarks":
+							{
+								"flags": 144,
+								"icon": "bookmark",
+								"regions":
+								[
+									[
+										13294,
+										13294
+									],
+									[
+										22074,
+										22074
+									]
+								],
+								"scope": "bookmarks"
+							}
+						},
+						"selection":
+						[
+							[
+								34647,
+								34647
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 969.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/run/user/1000/gvfs/ftp:host=67.225.133.86,user=mmtest/public_html/catalog/controller/api/custom.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7515,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								271,
+								271
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/run/user/1000/gvfs/ftp:host=67.225.133.86,user=mmtest/public_html/catalog/model/catalog/product.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 29833,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								19923,
+								19923
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "views/views.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3488,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1853,
+								1853
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 85.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 119.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "opencart-api.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"/run/user/1000/gvfs/sftp:host=109.74.203.196,user=root/var/www/mysite/linode_mysite_django.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 287.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

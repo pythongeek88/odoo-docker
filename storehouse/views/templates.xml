@@ -1,0 +1,63 @@
+<odoo>
+    <data>
+        <record id="paperformat_Zebra500" model="report.paperformat">
+            <field name="name">Paperformat for Zebra500</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">60</field>
+            <field name="page_width">60</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">3</field>
+            <field name="margin_bottom">3</field>
+            <field name="margin_left">3</field>
+            <field name="margin_right">3</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">3</field>
+            <field name="dpi">300</field>
+        </record>
+
+
+        <report
+            id="print_barcode_report"
+            model="storehouse.box"
+            string='Barcode label' 
+            report_type="qweb-pdf"            
+            name="storehouse.barcode_label"
+            file="storehouse.barcode_label"
+            paperformat="storehouse.paperformat_Zebra500"
+            attachment_use="False"  
+        />
+
+
+        <template id="barcode_label">
+
+            <t t-call="report.html_container">
+
+                <t t-foreach="docs" t-as="o">
+
+                    <div class="page">
+
+                        <div class="text-center">
+                            <br></br><span style="font-size: 10px"><strong><span t-field="o.name"/></strong></span><br></br>      
+                        </div>    
+
+
+                        <img class= "img-responsive" margin = "0 auto" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s'%('Code128', o.barcode.barcode, 1500, 600)"/>
+
+                        <div class="text-center">
+                            <span style="font-size: 10px"><strong><span t-field="o.barcode.barcode"/></strong></span> 
+                        </div>
+
+                    </div>
+
+                </t>
+           </t>
+        </template>
+
+        <record id="print_barcode_report" model="ir.actions.report.xml">
+
+            <field name="print_report_name">object.name + '.pdf'</field>
+
+        </record>  
+    </data>
+</odoo>

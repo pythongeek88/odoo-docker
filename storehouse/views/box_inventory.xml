@@ -1,0 +1,1979 @@
+<odoo>
+  <data>
+<!-- first level menu left side  for product-->
+<menuitem id="storehouse_box_inventory" name="Storehouse Inventory" parent="main_storehouse_menu" sequence="2"/>
+
+<!--
+groups="storehouse_products_virtual_user"
+groups="storehouse_box_inventory_user"
+-->
+
+<!--    set    -->
+
+    <record model="ir.ui.view" id="set_view">
+      <field name="name">set.view</field>
+      <field name="model">storehouse.set</field>
+      <field name="arch" type="xml">
+        <tree>
+              <field name="id" string="ID"/>
+              <field name="name" string="Set Name"/>
+              <field name="model" string="Model"/>
+              <field name="status" string="Set Status"/>
+              <field name="set_equipment" string="Set Equipment"/>
+              <field name="quantity" string="Set Quantity" type="char"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="set_form_view">
+      <field name="name">set.form</field>
+      <field name="model">storehouse.set</field>
+      <field name="arch" type="xml">
+        <form string="set form">
+          <sheet>
+
+
+          <group col="4">
+            <group colspan="4" string="Name">                
+                <h2><field name="name" nolabel="1"/></h2>
+            </group>
+
+            <group colspan="4" string="Model">                
+                <h2><field name="model" nolabel="1"/></h2>
+            </group>
+
+            <group colspan="2" string="Status">
+                <h3><field name="status" nolabel="1"/></h3>
+            </group>
+
+            <group colspan="2" string="Quantity">
+                <h3><field name="quantity" nolabel="1"/></h3>
+            </group>
+
+            <group colspan="2" string="Is Discontinued">
+                <h3><field name="is_discontinued" nolabel="1"/></h3>
+            </group>
+          </group>
+
+          <group string="Model on Market Channel">
+              <h3><field name="model_additional" nolabel="1"/></h3>
+          </group>
+
+          <group string="Set Equipment">
+              <field name="set_equipment" nolabel="1"/>
+          </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="storehouse_set_action">
+      <field name="name">Set</field>
+      <field name="res_model">storehouse.set</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">create the first set</p>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_set_action_tree">
+      <field name="res_model">storehouse.set</field>
+      <field name="view_mode">tree</field>
+      <field name="view_id" ref="set_view"/>
+      <field name="act_window_id" ref="storehouse_set_action"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_set_action_form">
+      <field name="res_model">storehouse.set</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="set_form_view"/>
+      <field name="act_window_id" ref="storehouse_set_action"/>
+    </record>
+
+    <menuitem id="storehouse_menu_set" name="Set" parent="storehouse_box_inventory" action="storehouse_set_action" sequence="1"/>
+
+<!-- set equipment -->
+
+    <record model="ir.ui.view" id="set_equipment_view">
+      <field name="name">set_equipment.view</field>
+      <field name="model">storehouse.set_equipment</field>
+      <field name="arch" type="xml">
+        <tree>
+              <field name="id" string="ID"/>
+              <field name="product_id" string="Product"/>
+              <field name="set_product_quantity" string="Quantity in Set" type="char"/>
+              <field name="total_products_quantity" string="Total Products Quantity" type="char"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="set_equipment_form_view">
+      <field name="name">set_equipment.form</field>
+      <field name="model">storehouse.set_equipment</field>
+      <field name="arch" type="xml">
+        <form string="set_equipment form">
+          <sheet>
+            <group>
+              <field name="product_id" string="Product" options="{'no_quick_create': True}" attrs="{'required': True}"/>
+              <field name="set_product_quantity" string="Quantity" attrs="{'required': True}"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="storehouse_set_equipment_action">
+      <field name="name">set_equipment</field>
+      <field name="res_model">storehouse.set_equipment</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">create the first client</p>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_set_equipment_action_tree">
+      <field name="res_model">storehouse.set_equipment</field>
+      <field name="view_mode">tree</field>
+      <field name="view_id" ref="set_equipment_view"/>
+      <field name="act_window_id" ref="storehouse_set_equipment_action"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_set_equipment_action_form">
+      <field name="res_model">storehouse.set_equipment</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="set_equipment_form_view"/>
+      <field name="act_window_id" ref="storehouse_set_equipment_action"/>
+    </record>
+
+<!-- set_model_additional -->
+
+    <record model="ir.ui.view" id="set_model_additional_view">
+      <field name="name">set_model_additional.view</field>
+      <field name="model">storehouse.set_model_additional</field>
+      <field name="arch" type="xml">
+        <tree>
+              <field name="model" string="model"/>
+              <field name="customer_id" string="Market Channel"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="set_model_additional_form_view">
+      <field name="name">set_model_additional.form</field>
+      <field name="model">storehouse.set_model_additional</field>
+      <field name="arch" type="xml">
+        <form string="set_model_additional form">
+          <sheet>
+            <group>
+              <field name="model" string="model" attrs="{'required': True}"/>
+              <field name="customer_id" string="Market Channel" options="{'no_quick_create': True}" attrs="{'required': True}"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="storehouse_set_model_additional_action">
+      <field name="name">set_model_additional</field>
+      <field name="res_model">storehouse.set_model_additional</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">create the first client</p>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_set_model_additional_action_tree">
+      <field name="res_model">storehouse.set_model_additional</field>
+      <field name="view_mode">tree</field>
+      <field name="view_id" ref="set_model_additional_view"/>
+      <field name="act_window_id" ref="storehouse_set_model_additional_action"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_set_model_additional_action_form">
+      <field name="res_model">storehouse.set_model_additional</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="set_model_additional_form_view"/>
+      <field name="act_window_id" ref="storehouse_set_model_additional_action"/>
+    </record>
+
+<!--    product    -->
+
+    <record model="ir.ui.view" id="products_view">
+      <field name="name">products.view</field>
+      <field name="model">storehouse.product</field>
+      <field name="arch" type="xml">
+        <tree>
+              <field name="name" string="Product Name"/>
+              <field name="sku_upc" string="SKU/UPC"/>
+              <field name="model" string="Product Model"/>
+              <field name="brand" string="Brand"/>
+              <field name="status" string="Product Status"/>
+              <field name="quantity" string="Product quantity" type="char"/>
+              <field name="product_equipment" string="Product equipment" groups="storehouse.storehouse_box_inventory_user"/>
+              <field name="id" string="Product ID"/>
+              <!--field name="sys_config" invisible="1"/-->
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="products_form_view">
+      <field name="name">products.form</field>
+      <field name="model">storehouse.product</field>
+      <field name="arch" type="xml">
+        <form string="products form">
+          <sheet>
+
+
+          <group col="4">
+            <!--label for="name" class="oe_edit_only" string="Additional view name" style="font-weight: bold"/-->
+            <group colspan="4" string="Name">                
+                <h2><field name="name" nolabel="1"/></h2>
+            </group>
+
+            <!--label for="model" class="oe_edit_only" string="Additional view model" colspan="4" style="font-weight: bold"/-->
+            <group colspan="2" string="Model">
+                <h3><field name="model" nolabel="1"/></h3>
+            </group>
+          </group>
+
+            <group string="Status &quot;on/off&quot;">
+              <field name="status" string="Status"/>
+            </group>
+
+          <group col="4">
+
+            <group colspan="2" string="Product Quantity">
+              <!--field name="quantity" string="Quantity" style="width:30%" attrs="{'readonly': [('sys_config', '=', 'box_inventory')]}"/-->
+              <field name="quantity" string="Quantity" style="width:30%"/>
+            </group>
+
+            <group colspan="4" string="Name On Market Channels">
+              <field name="name_additional" nolabel="1" style="width:100%"/>
+
+            </group>
+
+            <group colspan="4" string="Model On Market Channels">
+              <!-- style="width:30%" style="color:Red;" -->
+              <field name="model_additional" nolabel="1" style="width:100%"/>
+            </group>
+          </group>
+
+          <group>
+            <field name="is_option" string="Is Option?"/>
+            <field name="is_product_of_partner" string="Is Product Of Partner?"/>
+            <field name="is_discontinued" string="Is Discontinued?"/>
+            <field name="owner" string="Product Owner" domain="[('is_partner', '=', True)]"/>
+          </group>
+
+          <label style="color:Red;" string="For 3rd Party Stores (main option)" attrs="{'invisible': [('is_option', '=', False)]}"/>
+
+          <group string="Product Equipment" groups="storehouse.storehouse_box_inventory_user">
+              <field name="product_equipment" nolabel="1"/>
+          </group>
+
+            <group col="4">
+              <group string="Product Info" colspan="3">
+                <field name="manufacturer" string="Manufacturer" options="{'no_open': True}" style="width:100%"/>
+                <field name="brand" string="Brand" options="{'no_open': True}" style="width:100%"/>
+                <field name="sku_upc" string="SKU/UPC" style="width:100%"/>
+                <field name="barcode" string="Barcode">
+                  <tree delete="false" editable="top">
+                    <field name="barcode" string="Barcode" widget="char"/>
+                  </tree>
+                </field>
+                <!-- tmp hide -->
+                <!--field name="ean" string="EAN" style="width:100%"/>
+                <field name="jan" string="JAN" style="width:100%"/>
+                <field name="isbn" string="ISBN" style="width:100%"/>
+                <field name="mpn" string="MPN" style="width:100%"/>
+                <field name="category" string="Product Category" options="{'no_open': True}" style="width:100%"/>
+                <field name="barcode">
+                  <tree delete="false" editable="top">
+                    <field name="barcode" string="Barcode" widget="char"/>
+                  </tree>
+                </field-->
+              </group>
+              <!--group string="Product dimensions and weight" colspan="2"-->
+              <group colspan="2">
+                <field name="size_unit_id" string="Size Unit" style="width:100%"/>
+                <field name="height" string="Product Height" style="width:100%"/>
+                <field name="width" string="Product Width" style="width:100%"/>
+                <field name="depth" string="Product Depth" style="width:100%"/>
+                <field name="units_wid" string="Units WID" style="width:100%"/>
+                <field name="weight" string="Product Weight" style="width:100%"/>
+
+                <field name="transport_weight" string="Transport Weight"/>
+                <field name="transport_volume" string="Transport Volume"/>
+
+              </group>
+              <group string="Product Price" colspan="4">
+                <field name="price" nolabel="1"/>
+              </group>
+            </group>
+
+              <group string="Product description">
+                <field name="description" nolabel="1"/>
+              </group>
+            <group>
+              <field name="action_compute" invisible="1"/>
+              <field name="sys_config" invisible="1"/>
+            </group>
+
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="storehouse_product_action">
+      <field name="name">Products</field>
+      <field name="res_model">storehouse.product</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">create the first product</p>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_product_action_tree">
+      <field name="res_model">storehouse.product</field>
+      <field name="view_mode">tree</field>
+      <field name="view_id" ref="products_view"/>
+      <field name="act_window_id" ref="storehouse_product_action"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_product_action_form">
+      <field name="res_model">storehouse.product</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="products_form_view"/>
+      <field name="act_window_id" ref="storehouse_product_action"/>
+    </record>
+
+    <menuitem id="storehouse_menu_product" name="Products" parent="storehouse_box_inventory" action="storehouse_product_action" sequence="2"/>
+
+<!-- product_models form -->
+
+    <record model="ir.ui.view" id="product_models_form_view">
+      <field name="name">product_models.form</field>
+      <field name="model">storehouse.product_models</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <!--label string="Model"/-->
+            <group>
+              <field name="model" string="Model"/>
+            </group>
+            <!--label string="Customers"/-->
+            <group>
+              <field name="customer" string="Market Channels" options="{'no_create': True}" domain="[('status', '=', True),('market_channel_type', '!=', False)]"/>
+            </group>
+            <field name="product_id" invisible="1"/>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- tree -->
+
+    <record model="ir.ui.view" id="product_models_tree_view">
+      <field name="name">product_models.tree</field>
+      <field name="model">storehouse.product_models</field>
+      <field name="arch" type="xml">
+        <tree>
+              <field name="model" string="Model"/>
+              <field name="customer" string="Market Channels"/>
+        </tree>
+      </field>
+    </record>
+
+<!-- product_namess form -->
+
+    <record model="ir.ui.view" id="product_names_form_view">
+      <field name="name">product_names.form</field>
+      <field name="model">storehouse.product_names</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <!--label string="Model"/-->
+            <group>
+              <field name="name" string="Name"/>
+            </group>
+            <!--label string="Customers"/-->
+            <group>
+              <field name="customer" string="Market Channels" options="{'no_create': True}"/>
+            </group>
+            <field name="product_id" invisible="1"/>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- tree -->
+
+    <record model="ir.ui.view" id="product_names_tree_view">
+      <field name="name">product_names.tree</field>
+      <field name="model">storehouse.product_names</field>
+      <field name="arch" type="xml">
+        <tree>
+              <field name="name" string="Name"/>
+              <field name="customer" string="Market Channels"/>
+        </tree>
+      </field>
+    </record>
+
+<!-- product equipment -->
+
+    <record model="ir.ui.view" id="product_equipment_view">
+      <field name="name">product_equipment.view</field>
+      <field name="model">storehouse.product_equipment</field>
+      <field name="arch" type="xml">
+        <tree>
+              <field name="id" string="ID"/>
+              <!--field name="product_id" string="Products List"/-->
+              <field name="box_id" string="Box"/>
+              <field name="quantity" string="Quantity" type="char"/>
+              <field name="total_quantity" string="Total box quantity" type="char"/>
+              <!--field name="is_option" string="Is option?"/>
+              <field name="box_option" string="Box option" attrs="{'invisible':[('is_option', '=', False)], 'required':[('is_option', '=', True)]}"/-->
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="product_equipment_form_view">
+      <field name="name">product_equipment.form</field>
+      <field name="model">storehouse.product_equipment</field>
+      <field name="arch" type="xml">
+        <form string="product_equipment form">
+          <sheet>
+            <group>
+              <field name="id" string="ID"/>
+              <!--field name="product_id" string="Products List" options="{'no_create_edit': True, 'no_open': True}"/-->
+              <!--field name="box_id" string="Box List"/-->
+              <field name="box_id" string="Box" options="{'no_quick_create': True}" attrs="{'required': True}"/>
+              <field name="quantity" string="Quantity" attrs="{'required': True}"/>
+              <!--field name="is_option" string="Is option?"/>
+              <field name="box_option" string="Box option" attrs="{'invisible':[('is_option', '=', False)], 'required':[('is_option', '=', True)]}"/-->
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="storehouse_product_equipment_action">
+      <field name="name">product_equipment</field>
+      <field name="res_model">storehouse.product_equipment</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">create the first client</p>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_product_equipment_action_tree">
+      <field name="res_model">storehouse.product_equipment</field>
+      <field name="view_mode">tree</field>
+      <field name="view_id" ref="product_equipment_view"/>
+      <field name="act_window_id" ref="storehouse_product_equipment_action"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_product_equipment_action_form">
+      <field name="res_model">storehouse.product_equipment</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="product_equipment_form_view"/>
+      <field name="act_window_id" ref="storehouse_product_equipment_action"/>
+    </record>
+
+    <!--menuitem id="storehouse_menu_product_equipment" name="Product Equipment" parent="storehouse_product_menu" action="storehouse_product_equipment_action"/-->
+
+<!-- boxes  -->
+
+    <record model="ir.ui.view" id="boxes_view">
+      <field name="name">boxes.view</field>
+      <field name="model">storehouse.box</field>
+      <field name="arch" type="xml">
+        <!--tree colors="red:quantity_need_2_order > 0"-->
+        <!--tree colors="red:quantity_need_2_order > quantity_ordered;green:quantity_ordered > quantity_need_2_order"-->
+        <tree>
+              <field name="id" string="ID"/>
+              <field name="name" string="Box Name"/>
+              <field name="quantity" string="Total Quantity" type="Char"/>
+              
+              <!--field name="quantity_need_2_order" string="Quantity Need To Order" type="char"/>
+              <field name="quantity_ordered" string="Quantity Ordered" type="char"/-->
+              <field name="volume" string="Box Volume" type="Char"/>
+              <field name="weight" string="Box Weight" type="Char"/>
+              <field name="description" string="Description"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="boxes_form_view">
+      <field name="name">boxes.form</field>
+      <field name="model">storehouse.box</field>
+      <field name="arch" type="xml">
+        <form string="boxes form">
+          <sheet>
+            <group>
+                <field name="barcode" string="Barcode">
+                  <tree delete="false" editable="top">
+                    <field name="barcode" string="Barcode" widget="char"/>
+                  </tree>
+                </field>
+            </group>
+            <group>
+              <field name="name" string="Box Name"/>
+              <field name="quantity" string="Box Quantity"/>
+              <field name="height" string="Box Height"/>
+              <field name="width" string="Box Width"/>
+              <field name="depth" string="Box Depth"/>
+              <field name="volume" string="Box Volume"/>
+              <field name="weight" string="Box Weight"/>
+              <field name="description" string="Box Description" widget='html'/>
+              <field name="action_compute" string="Act" invisible="1"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="storehouse_box_action">
+      <field name="name">Boxes</field>
+      <field name="res_model">storehouse.box</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">create the first box</p>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_box_action_tree">
+      <field name="res_model">storehouse.box</field>
+      <field name="view_mode">tree</field>
+      <field name="view_id" ref="boxes_view"/>
+      <field name="act_window_id" ref="storehouse_box_action"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_box_action_form">
+      <field name="res_model">storehouse.box</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="boxes_form_view"/>
+      <field name="act_window_id" ref="storehouse_box_action"/>
+    </record>
+
+    <!--menuitem id="storehouse_box_menu" name="Storehouse Boxes" parent="main_storehouse_menu"/-->
+
+    <menuitem id="storehouse_menu_box" name="Boxes" parent="storehouse_box_inventory" action="storehouse_box_action" sequence="3" groups="storehouse.storehouse_box_inventory_user"/>
+
+<!--    manufacturer    -->
+    <record model="ir.actions.act_window" id="storehouse_manufacturer_action">
+      <field name="name">Manufacturer</field>
+      <field name="res_model">storehouse.manufacturer</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">create the first manufacturer</p>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="manufacturer_view">
+      <field name="name">manufacturer.view</field>
+      <field name="model">storehouse.manufacturer</field>
+      <field name="arch" type="xml">
+        <tree>
+              <field name="name" string="Name"/>
+              <field name="web_site" string="Website"/>
+              <field name="email" string="Email"/>
+              <field name="telephone" string="Telephone"/>
+              <field name="fax" string="Fax"/>
+        </tree>
+      </field>
+    </record>
+
+   <record model="ir.ui.view" id="manufacturer_form_view">
+      <field name="name">manufacturer.form</field>
+      <field name="model">storehouse.manufacturer</field>
+      <field name="arch" type="xml">
+        <form string="manufacturer form">
+          <sheet>
+            <group>
+             <!-- <field name="id" string="Manufacturer ID"/> -->
+              <field name="name" string="Name"/>
+              <field name="web_site" string="Website"/>
+              <field name="email" string="Email"/>
+              <field name="telephone" string="Telephone"/>
+              <field name="fax" string="Fax"/>
+              <field name="status" string="Status"/>
+              <field name="address" string="Address"/>
+              <field name="city" string="City"/>
+              <field name="postcode" string="Postcode"/>
+              <field name="country" string="Country"/>
+              <field name="state_region" string="State Region"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- first level menu left side  for manufacturer-->
+    <!--menuitem id="storehouse_manufacturer_menu" name="Storehouse Manufacturers" parent="main_storehouse_menu"/-->
+    <menuitem id="storehouse_menu_manufacturer" name="Manufacturer" parent="storehouse_box_inventory" action="storehouse_manufacturer_action" sequence="4"/>
+
+<!--    brand     -->
+
+    <record model="ir.ui.view" id="brand_view">
+      <field name="name">brand.view</field>
+      <field name="model">storehouse.brand</field>
+      <field name="arch" type="xml">
+        <tree>
+              <field name="name" string="Name"/>
+         
+        </tree>
+      </field>
+    </record>
+
+   <record model="ir.ui.view" id="brand_form_view">
+      <field name="name">brand.form</field>
+      <field name="model">storehouse.brand</field>
+      <field name="arch" type="xml">
+        <form string="brand form">
+          <sheet>
+            <group>
+              <field name="name" string="Name"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="storehouse_brand_action">
+      <field name="name">Brand</field>
+      <field name="res_model">storehouse.brand</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">create the first brand</p>
+      </field>
+    </record>
+
+    <!-- first level menu left side  for brand-->
+    <!--menuitem id="storehouse_brand_menu" name="Storehouse Brand" parent="main_storehouse_menu"/-->
+
+    <menuitem id="storehouse_menu_brand" name="Brand" parent="storehouse_box_inventory" action="storehouse_brand_action" sequence="5"/>
+
+<!--    inventory     -->
+    <record model="ir.ui.view" id="inventory_view">
+      <field name="name">inventory.view</field>
+      <field name="model">storehouse.inventory</field>
+      <field name="arch" type="xml">
+        <tree>
+              <field name="cell" string="Cell ID"/>
+              <field name="box" string="Box"/>
+              <field name="amount" string="Amount" type="char"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="inventory_form_view">
+      <field name="name">inventory.form</field>
+      <field name="model">storehouse.inventory</field>
+      <field name="arch" type="xml">
+        <form string="inventory form">
+          <sheet>
+            <group>
+              <field name="cell" string="Cell ID" options="{'no_open': True, 'no_create': True}"/>
+              <field name="box" string="Box" options="{'no_open': True, 'no_create': True}"/>
+              <field name="amount" string="Amount"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="storehouse_inventory_action">
+      <field name="name">Inventory</field>
+      <field name="res_model">storehouse.inventory</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">create the first inventory</p>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_inventory_action_tree">
+      <field name="res_model">storehouse.inventory</field>
+      <field name="view_mode">tree</field>
+      <field name="view_id" ref="inventory_view"/>
+      <field name="act_window_id" ref="storehouse_inventory_action"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_inventory_action_form">
+      <field name="res_model">storehouse.inventory</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="inventory_form_view"/>
+      <field name="act_window_id" ref="storehouse_inventory_action"/>
+    </record>
+
+    <!-- first level menu left side  for inventory-->
+    <!--menuitem id="storehouse_inventory_menu" name="Storehouse Inventory" parent="main_storehouse_menu"/-->
+
+    <menuitem id="storehouse_menu_inventory" name="Inventory" parent="storehouse_box_inventory" action="storehouse_inventory_action" sequence="6" groups="storehouse.storehouse_box_inventory_user"/>
+
+<!--    inventory cell    -->
+    <record model="ir.ui.view" id="inventory_cell_view">
+      <field name="name">inventory_cell.view</field>
+      <field name="model">storehouse.cell</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id" string="ID"/>
+          <field name="line" string="Line"/>
+          <field name="level" string="Level"/>
+          <field name="place" string="Place"/>
+          <field name="height" string="Height"/>
+          <field name="width" string="Width"/>
+          <field name="depth" string="Depth"/>
+          <field name="weight" string="Weight"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="inventory_cell_form_view">
+      <field name="name">inventory_cell.form</field>
+      <field name="model">storehouse.cell</field>
+      <field name="arch" type="xml">
+        <form string="inventory_cell form">
+          <sheet>
+            <group>
+              <field name="id" string="ID"/>
+              <field name="line" string="Line"/>
+              <field name="level" string="Level"/>
+              <field name="place" string="Place"/>
+              <field name="height" string="Height"/>
+              <field name="width" string="Width"/>
+              <field name="depth" string="Depth"/>
+              <field name="weight" string="Weight"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="storehouse_inventory_cell_action">
+      <field name="name">Cell</field>
+      <field name="res_model">storehouse.cell</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">create the first cell</p>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_inventory_cell_action_tree">
+      <field name="res_model">storehouse.cell</field>
+      <field name="view_mode">tree</field>
+      <field name="view_id" ref="inventory_cell_view"/>
+      <field name="act_window_id" ref="storehouse_inventory_cell_action"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_inventory_cell_action_form">
+      <field name="res_model">storehouse.cell</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="inventory_cell_form_view"/>
+      <field name="act_window_id" ref="storehouse_inventory_cell_action"/>
+    </record>
+
+    <menuitem id="storehouse_menu_inventory_cell" name="Cell" parent="storehouse_box_inventory" action="storehouse_inventory_cell_action" sequence="7" groups="storehouse.storehouse_box_inventory_user"/>
+
+<!--    suppliers     -->
+
+    <record model="ir.ui.view" id="suppliers_view">
+      <field name="name">suppliers.view</field>
+      <field name="model">storehouse.suppliers</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" string="Name"/>
+          <field name="website" string="Website"/>
+          <field name="email" string="Email"/>
+          <field name="telephone" string="Telephone"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="suppliers_form_view">
+      <field name="name">suppliers.form</field>
+      <field name="model">storehouse.suppliers</field>
+      <field name="arch" type="xml">
+        <form string="suppliers form">
+          <sheet>
+            <group>
+              <field name="name" string="Name"/>
+              <field name="website" string="Website"/>
+              <field name="email" string="Email"/>
+              <field name="telephone" string="Telephone"/>
+              <field name="fax" string="Fax"/>
+              <field name="status" string="Status"/>
+              <field name="address" string="Address"/>
+              <field name="city" string="City"/>
+              <field name="postcode" string="Postcode"/>
+              <field name="country" string="Country"/>
+              <field name="state_region" string="State region"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="storehouse_suppliers_action">
+      <field name="name">Suppliers</field>
+      <field name="res_model">storehouse.suppliers</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">create the first supplier</p>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_suppliers_action_tree">
+      <field name="res_model">storehouse.suppliers</field>
+      <field name="view_mode">tree</field>
+      <field name="view_id" ref="suppliers_view"/>
+      <field name="act_window_id" ref="storehouse_suppliers_action"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_suppliers_action_form">
+      <field name="res_model">storehouse.suppliers</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="suppliers_form_view"/>
+      <field name="act_window_id" ref="storehouse_suppliers_action"/>
+    </record>
+
+    <!-- first level menu left side  for suppliers-->
+    <!--menuitem id="storehouse_suppliers_menu" name="Storehouse Suppliers" parent="main_storehouse_menu"/-->
+
+    <menuitem id="storehouse_menu_suppliers" name="Suppliers" parent="storehouse_box_inventory" action="storehouse_suppliers_action" sequence="8"/>
+
+<!--    price     -->
+    <record model="ir.ui.view" id="price_view">
+      <field name="name">price.view</field>
+      <field name="model">storehouse.price</field>
+      <field name="arch" type="xml">
+        <tree>
+              
+              <field name="msrp" string="MSRP" type="char"/>
+              <!--field name="cost" string="Cost"/>
+              <field name="ship_price" string="Ship price"/-->
+              <field name="m_a_p" string="MAP" type="char"/>
+              <field name="customer" string="Market Channels"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="price_form_view">
+      <field name="name">price.form</field>
+      <field name="model">storehouse.price</field>
+      <field name="arch" type="xml">
+        <form string="price form">
+          <sheet>
+            <group>
+              <field name="product_id" invisible="1"/>
+              <field name="msrp" string="MSRP"/>
+              <field name="cost" string="Cost"/>
+              <!--field name="cost_amount" string="Cost amount"/-->
+              <field name="cost_additional" string="Cost additional"/>
+              <field name="ship_price" string="Ship price"/>
+              <field name="m_a_p" string="MAP"/>
+              <field name="customer" string="Market Channels" options="{'no_open': True, 'no_create': True}"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="storehouse_price_action">
+      <field name="name">Price</field>
+      <field name="res_model">storehouse.price</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">create the first price</p>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_price_action_tree">
+      <field name="res_model">storehouse.price</field>
+      <field name="view_mode">tree</field>
+      <field name="view_id" ref="price_view"/>
+      <field name="act_window_id" ref="storehouse_price_action"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_price_action_form">
+      <field name="res_model">storehouse.price</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="price_form_view"/>
+      <field name="act_window_id" ref="storehouse_price_action"/>
+    </record>
+
+    <!-- first level menu left side  for price-->
+    <!--menuitem id="storehouse_price_menu" name="Storehouse Price" parent="main_storehouse_menu"/-->
+
+    <menuitem id="storehouse_menu_price" name="Price" parent="storehouse_box_inventory" action="storehouse_price_action" sequence="9"/>
+
+<!--    customer (marketchannel)  -->
+    <record model="ir.ui.view" id="customer_product_virtual_view">
+      <field name="name">customer.view</field>
+      <field name="model">storehouse.customer</field>
+      <field name="arch" type="xml">
+        <tree>
+              <field name="id" string="ID"/>
+              <field name="name" string="Name"/>
+              <field name="market_channel_type" string="Type"/>
+              <field name="status" string="Status"/>
+              <field name="is_partner" string="Is Partner?"/>
+              <field name="website" string="Website"/>
+              <field name="email" string="Email"/>
+              <field name="telephone" string="Telephone"/>
+              <field name="fax" string="Fax"/>
+              <field name="commission" string="Commission %" type="Char"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="customer_product_virtual_form_view">
+      <field name="name">customer.form</field>
+      <field name="model">storehouse.customer</field>
+      <field name="arch" type="xml">
+        <form string="customer form">
+          <sheet>
+            <group>
+              <field name="name" string="Name"/>
+              <field name="market_channel_type" string="Market Channel Type"/>
+              <field name="website" string="Website"/>
+              <field name="email" string="Email"/>
+              <field name="telephone" string="Telephone"/>
+              <field name="fax" string="Fax"/>
+              <field name="status" string="Status"/>
+              <field name="is_partner" string="Is Partner?"/>
+              <field name="address" string="Address"/>
+              <field name="city" string="City"/>
+              <field name="postcode" string="Postcode"/>
+              <field name="country" string="Country"/>
+              <field name="state_region" string="State region"/>
+              <field name="commission" string="Commission %"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="storehouse_customer_product_virtual_action">
+      <field name="name">Market Channels</field>
+      <field name="res_model">storehouse.customer</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">create the first customer</p>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_customer_product_virtual_action_tree">
+      <field name="res_model">storehouse.customer</field>
+      <field name="view_mode">tree</field>
+      <field name="view_id" ref="customer_product_virtual_view"/>
+      <field name="act_window_id" ref="storehouse_customer_product_virtual_action"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_customer_product_virtual_action_form">
+      <field name="res_model">storehouse.customer</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="customer_product_virtual_form_view"/>
+      <field name="act_window_id" ref="storehouse_customer_product_virtual_action"/>
+    </record>
+
+    <!-- first level menu left side  for customer-->
+    <!--menuitem id="storehouse_customer_product_virtual_menu" name="Storehouse Customers" parent="main_storehouse_menu"/-->
+
+    <menuitem id="storehouse_menu_customer" name="Market Channels" parent="storehouse_box_inventory" action="storehouse_customer_product_virtual_action" sequence="10"/>
+
+<!--    clients     -->
+    <record model="ir.ui.view" id="clients_box_inventory_view">
+      <field name="name">clients.view</field>
+      <field name="model">storehouse.clients</field>
+      <field name="arch" type="xml">
+        <tree>
+              <field name="name" string="Name"/>
+              <field name="email" string="Email"/>
+              <field name="telephone" string="Telephone"/>
+              <field name="fax" string="Fax"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="clients_box_inventory_form_view">
+      <field name="name">clients.form</field>
+      <field name="model">storehouse.clients</field>
+      <field name="arch" type="xml">
+        <form string="clients form">
+          <sheet>
+            <group>
+              <field name="name" string="Name"/>
+              <field name="email" string="Email"/>
+              <field name="telephone" string="Telephone"/>
+              <field name="fax" string="Fax"/>
+              <field name="address" string="Address"/>
+              <field name="city" string="City"/>
+              <field name="postcode" string="Postcode" widget="char"/>
+              <field name="country" string="Country"/>
+              <field name="state_region" string="State region"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="storehouse_clients_box_inventory_action">
+      <field name="name">Clients</field>
+      <field name="res_model">storehouse.clients</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">create the first client</p>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_clients_box_inventory_action_tree">
+      <field name="res_model">storehouse.clients</field>
+      <field name="view_mode">tree</field>
+      <field name="view_id" ref="clients_box_inventory_view"/>
+      <field name="act_window_id" ref="storehouse_clients_box_inventory_action"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_clients_box_inventory_action_form">
+      <field name="res_model">storehouse.clients</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="clients_box_inventory_form_view"/>
+      <field name="act_window_id" ref="storehouse_clients_box_inventory_action"/>
+    </record>
+
+    <!-- first level menu left side  for clients-->
+    <!--menuitem id="storehouse_clients_box_inventory_menu" name="Storehouse Clients" parent="main_storehouse_menu"/-->
+
+    <menuitem id="storehouse_menu_clients" name="Clients" parent="storehouse_box_inventory" action="storehouse_clients_box_inventory_action" sequence="11"/>
+
+<!--    orders     -->
+    <record model="ir.ui.view" id="clients_order_box_inventory_view">
+      <field name="name">clients_order.view</field>
+      <field name="model">storehouse.clients_order</field>
+      <field name="arch" type="xml">
+        <!--tree default_order='create_date desc' colors="red:error == True;green:error == False" create="false" delete="false"-->
+        <!--tree default_order='create_date desc' colors="red:error == True;green:error == False" create="false"-->
+        <tree default_order='create_date desc' create="true" decoration-bf="need_cancel==True" decoration-danger="need_cancel==True" decoration-success="error==False" decoration-warning="error==True">
+              <field name="id" string="Id"/>
+              <field name="clients_id" string="Client Name"/>
+              <field name="clients_order_product" string="Products List" />
+              <field name="total" string="Total Price" />
+              <!--field name="extra_cost" string="Extra Cost" /-->
+              <field name="order_id_customer" string="Customer Order ID"/>
+              <field name="status_id" string="Store status"/>
+              <field name="status_order_odoo" string="Order Status"/>
+              <field name="customer_id" string="Customer"/>
+              <field name="create_date" string="Order Date"/>
+              <field name="error" invisible="1"/>
+              <field name="need_cancel" invisible="1"/>
+              <!--field name="invoce_prefix" string="Invoce Prefix"/-->
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="clients_order_box_inventory_form_view">
+      <field name="name">clients_order.form</field>
+      <field name="model">storehouse.clients_order</field>
+      <field name="arch" type="xml">
+        <form string="clients_order form" create="false" delete="false">
+          <header>
+            <!--button name="rollback_order_button" string="Cancel order" type="object" class="oe_highlight" confirm="Do you want to cancel the order?" attrs="{'invisible':[('status_id', 'in', ['cancel', 'Cancel', 'Canceled', 'canceled', 'Shipped', 'sent cancel request'])]}"/-->
+            <button name="rollback_order_button" string="Cancel order" type="object" class="oe_highlight" confirm="Do you want to cancel the order?" attrs="{'invisible':['|',('need_cancel', '=', True),('status_id', 'in', ['Shipped','Canceled',])]}"/>
+            <button name="add_comment" string="Add Comment" type="object" class="oe_highlight"/>
+
+          </header>
+          <sheet>
+            <group>
+              <field name="order_name" string="Order Name"/>
+              <field name="cancel_info" string="Information To Cancel" attrs="{'invisible':[('need_cancel', '=', False)]}" style="color:Red;" readonly="1" widget="html"/>
+              
+
+            </group>
+            <notebook>
+              <page string="main info">
+                <group col="4">
+                  <group colspan="4">
+                  <field name="clients_id" string="Client Name"/>
+                  <field name="client_tel" string="Client Telephone"/>
+                  <!--field name="clients_order_product" string="Products List" attrs="{'readonly': True}"/-->
+
+                  <field name="clients_order_set" string="Set List" attrs="{'readonly': True}">
+                    <tree delete="false" create="false">
+                      <field name="id" string="ID"/>
+                      <field name="set_id" string="Set"/>
+                      <field name="quantity" string="Ordered Quantity" />
+                      <field name="price" string="Price"/>
+                      <field name="total" string="Total Price" />
+                      <field name="status" string="Status" />
+                    </tree>
+                  </field>
+
+                  <field name="clients_order_product" string="Products List" attrs="{'readonly': True}">
+                    <tree delete="false" create="false">
+                      <field name="id" string="ID"/>
+                      <field name="product_id" string="Products"/>
+                      <field name="quantity" string="Ordered Quantity" />
+                      <field name="price" string="Price"/>
+                      <field name="total" string="Total Price" />
+                      <field name="status" string="Status" />
+                    </tree>
+                  </field>
+                </group>
+
+                <group colspan="4">
+                    <group colspan="4">
+                      <field name="order_equipment" string="Order Equipment"/>
+                    </group>
+                    <group colspan="4">
+                            <div class="oe_button_box" name="button_o">
+                                <button name="all_order_equipment_to_order_button" type="object" class="oe_stat_button" icon="fa-plus-circle" string="Fill In"/>
+                                <button name="all_order_equipment_to_warehouse_button" type="object" class="oe_stat_button" icon="fa-minus-circle" string="Remove"/>
+                            </div>
+                    </group>
+                </group>
+                <group colspan="4">
+                  <!--field name="items_need_2_order" string="Out Of Stock Products">
+                    <tree delete="false" create="false" editable="top">
+                      <field name="id" string="ID"/>
+                      <field name="product_id" string="Product" attrs="{'readonly': True}" context="{'form_view_ref': 'storehouse.products_virtual_form_view'}"/>
+                      <field name="total_quantity" string="Total Quantity" type="char"/>
+                      <field name="ordered_quantity" string="Ordered Quantity" attrs="{'readonly': True}"/>
+                      <field name="missing_quantity" string="Missing Quantity" attrs="{'readonly': True}"/>
+                      <field name="status" string="Status"/>
+                      <field name="processed" string="Processed" attrs="{'readonly': True}"/>
+                      <field name="arrival_date" string="Arrival Date"/>
+                      <button name="manual_processing" string="manual processing" type="object" class="oe_highlight" attrs="{'invisible':[('processed', '=', True)]}"/>
+                      
+                    </tree>
+                  </field-->
+
+                  <!--field name="boxes_need_2_order" string="Boxes Need To Order">
+                    <tree delete="false" create="false" editable="top">
+                      <field name="product_name" string="Product Name" readonly="1"/>
+                      <field name="box_id" string="Box" readonly="1"/>
+                      <field name="quantity" string="Quantity" type="char"/>
+                      <field name="status" string="Status"/>
+                    </tree>
+                  </field-->
+
+                  <field name="warning" string="Order Errors:" readonly="1" attrs="{'invisible':[('error', '=', False)]}" style="color:Red;"/>
+                  <!-- market channel = customer -->
+                  <field name="customer_id" string="Market Channel" />
+                  <field name="order_id_customer" string="Market Channel Order ID"/>
+                  <!--field name="products_rel" string="products_rel"/-->
+                  <field name="total" string="Total Price"/>
+                  <field name="extra_cost" string="Extra Cost"/>
+                  <!--field name="status_id" string="Store Status" readonly="1"/-->
+                  <field name="status_id" string="Store Status" readonly="1"/>
+                  <field name="status_order_odoo" string="Order Status"/>
+                  <field name="invoce_prefix" string="Invoce Prefix"/>
+                  <field name="shipping_firstname" string="Shipping Name"/>
+                  <field name="shipping_company" string="Shipping Company"/>
+                  <field name="shipping_address_1" string="Shipping Address 1"/>
+                  <field name="shipping_address_2" string="Shipping Address 2"/>
+                  <field name="shipping_city" string="Shipping City"/>
+                  <field name="shipping_postcode" string="Shipping Postcode"/>
+                  <field name="shipping_country" string="Shipping Country"/>
+                  <field name="error" invisible="1"/>
+                  <field name="need_cancel" invisible="1"/>
+                  <field name="canceled" invisible="1"/>
+                  <field name="volume_comp_box_inv" string="Volume" groups="storehouse.storehouse_box_inventory_user"/>
+                  <field name="gross_weight_comp_box_inv" string="Weight" groups="storehouse.storehouse_box_inventory_user"/>
+                  <field name="volume_comp_prod_vir" string="Volume" groups="storehouse.storehouse_products_virtual_user"/>
+                  <field name="gross_weight_comp_prod_vir" string="Weight" groups="storehouse.storehouse_products_virtual_user"/>
+                  <!--button name="rollback_order" string="Cancel order" type="object" class="oe_highlight" attrs="{'invisible':[('status_id', '=ilike', 'canceled')]}"/-->
+                  <!--field name="action_compute" string="Act" invisible="1"/-->
+                  <field name="order_info" string="Order Info" attrs="{'invisible':[('order_info', '=', False)]}" readonly="1" widget="html"/> 
+                </group>
+
+                </group>
+              </page>
+              <page string='log'>
+                <group>
+                  <field name="log" nolabel="1" widget="html" readonly="1"/>
+                </group>
+              </page>
+              <page string='edi'>
+                <group>
+                  <field name="edi_850" readonly="1"/>
+                  <field name="edi_856" readonly="1"/>
+                  <field name="edi_855" readonly="1"/>
+                  <field name="edi_810" readonly="1"/>
+                </group>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="storehouse_clients_orderbox_inventory_action">
+      <field name="name">Clients Order</field>
+      <field name="res_model">storehouse.clients_order</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create"></p>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_clients_orderbox_inventory_action_tree">
+      <field name="res_model">storehouse.clients_order</field>
+      <field name="view_mode">tree</field>
+      <field name="view_id" ref="clients_order_box_inventory_view"/>
+      <field name="act_window_id" ref="storehouse_clients_orderbox_inventory_action"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_clients_orderbox_inventory_action_form">
+      <field name="res_model">storehouse.clients_order</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="clients_order_box_inventory_form_view"/>
+      <field name="act_window_id" ref="storehouse_clients_orderbox_inventory_action"/>
+    </record>
+
+    <!-- first level menu left side  for clients-->
+    <!--menuitem id="storehouse_clients_order_menu" name="Storehouse Clients Order" parent="main_storehouse_menu"/-->
+
+    <menuitem id="storehouse_menu_clients_order" name="Clients Order" parent="storehouse_box_inventory" action="storehouse_clients_orderbox_inventory_action" sequence="12"/>
+
+<!-- local clients order -->
+
+        <record model="ir.ui.view" id="local_clients_order_form_view">
+            <field name="name">local_clients_order.form</field>
+            <field name="model">storehouse.local_clients_order</field>
+            <field name="arch" type="xml">
+              <form create="false" edit="false">
+                    <group>
+                      <field name="customer" options="{'no_open': True, 'no_create_edit': True}" domain="[('is_partner', '!=', True),('market_channel_type', '=', 'local.settings')]"/>
+                      <field name="order_name" string="Order Name" />
+                      <!--field name="order_id"/-->
+                      <field name="shipping_postcode"/>
+                      <field name="shipping_name" />
+                      <field name="shipping_city" />
+                      <field name="shipping_state" />
+                      <field name="shipping_address" />
+                      <field name="shipping_company" />
+                      <field name="shipping_country" />
+                      <field name="client_name" />
+                      <field name="client_tel" />
+                      <field name="client_state_region" />
+                      <field name="client_postcode" />
+                      <field name="client_email" />
+                      <field name="client_country" />
+                      <field name="client_city" />
+                      <field name="client_address" />
+                      <field name="client_fax" />
+
+                      <group colspan="4">
+                        <!--field name="clients_id" string="Client Name"/>
+                        <field name="client_tel" string="Client Telephone"/-->
+
+                        <field name="clients_order_set" string="Set List">
+                          <tree editable="top">
+                            <field name="set_id" string="Set" />
+                            <field name="quantity" string="Ordered Quantity" />
+                            <field name="price" string="Price" />
+                          </tree>
+                        </field>
+
+                        <field name="clients_order_product" string="Products List">
+                          <tree editable="top">
+                            <field name="product_id" string="Products" />
+                            <field name="quantity" string="Ordered Quantity" />
+                            <field name="price" string="Price" />
+                          </tree>
+                        </field>
+                      </group>
+                    </group>
+                    <!--group>
+                      <field name="name_of_file" invisible="1" />
+                      <field name="file" readonly="1"  filename="name_of_file" attrs="{'invisible':[('file', '=', False)]}"/>
+                    </group-->
+                      <newline/>
+                      <separator colspan="6"/>
+                      <footer>
+                        <button name="ok_action" string="Ok" type="object" class="btn-primary"/>
+                        <button special="cancel" class="oe_highlight" string="Close"/>
+                      </footer>
+
+              </form>
+            </field>
+        </record>
+
+<!-- cancel order info forms -->
+
+<!-- houzz -->
+        <record model="ir.ui.view" id="cancel_order_info_houzz_form_view">
+            <field name="name">cancel_order_info_houzz.form</field>
+            <field name="model">storehouse.cancel_order_info_houzz</field>
+            <field name="arch" type="xml">
+                <form string="Cancel Order Info">
+                    <group>
+                        <field name="cancel_code"/>
+                        <field name="cancel_comment"/>
+                    </group>
+                    <footer>
+                        <button name="write_cancel_info" type="object"
+                                string="Ok" class="oe_highlight"/>
+                                or
+                        <button special="cancel" string="Close"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+<!-- amzn seller -->
+        <record model="ir.ui.view" id="cancel_order_info_amzn_seller_form_view">
+            <field name="name">cancel_order_info_amzn_seller.form</field>
+            <field name="model">storehouse.cancel_order_info_amzn_seller</field>
+            <field name="arch" type="xml">
+                <form string="Cancel Order Info">
+                    <group>
+                        <field name="cancel_code"/>
+                        <field name="cancel_comment"/>
+                    </group>
+                    <footer>
+                        <button name="write_cancel_info" type="object"
+                                string="Ok" class="oe_highlight"/>
+                                or
+                        <button special="cancel" string="Close"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+<!-- wayfair -->
+        <record model="ir.ui.view" id="cancel_order_info_wayfair_form_view">
+            <field name="name">cancel_order_info_wayfair.form</field>
+            <field name="model">storehouse.cancel_order_info_wayfair</field>
+            <field name="arch" type="xml">
+                <form string="Cancel Order Info">
+                    <group>
+                        <field name="ack_code"/>
+                        <field name="cancel_comment"/>
+                    </group>
+                    <footer>
+                        <button name="write_cancel_info" type="object"
+                                string="Ok" class="oe_highlight"/>
+                                or
+                        <button special="cancel" string="Close"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+<!-- amazon vendor -->
+        <record model="ir.ui.view" id="cancel_order_info_amazon_vendor_form_view">
+            <field name="name">cancel_order_info_amazon_vendor.form</field>
+            <field name="model">storehouse.cancel_order_info_amazon_vendor</field>
+            <field name="arch" type="xml">
+                <form string="Cancel Order Info">
+                    <group>
+                        <field name="ack_code"/>
+                        <field name="cancel_comment"/>
+                    </group>
+                    <footer>
+                        <button name="write_cancel_info" type="object"
+                                string="Ok" class="oe_highlight"/>
+                                or
+                        <button special="cancel" string="Close"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <!--act_window id="launch_cancel_order_info_houzz"
+                    name="Cancel Order"
+                    src_model="storehouse.clients_order"
+                    res_model="storehouse.cancel_order_info_houzz"
+                    view_mode="form"
+                    target="new"
+                    key2="client_action_multi"/-->
+
+<!-- local order -->
+        <record model="ir.ui.view" id="cancel_order_info_local_form_view">
+            <field name="name">cancel_order_info_local.form</field>
+            <field name="model">storehouse.cancel_order_info_local</field>
+            <field name="arch" type="xml">
+                <form string="Cancel Order Info">
+                    <group>
+                        <field name="cancel_comment"/>
+                    </group>
+                    <footer>
+                        <button name="write_cancel_info" type="object"
+                                string="Ok" class="oe_highlight"/>
+                                or
+                        <button special="cancel" string="Close"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+<!-- write order comment form -->
+
+        <record model="ir.ui.view" id="order_comment_form_view">
+            <field name="name">order_comment.form</field>
+            <field name="model">storehouse.order_comment</field>
+            <field name="arch" type="xml">
+                <form string="Order Comment">
+                    <group>
+                        <field name="comment"/>
+                    </group>
+                    <footer>
+                        <button name="write_comment" type="object"
+                                string="Ok" class="oe_highlight"/>
+                                or
+                        <button special="cancel" string="Close"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+<!--  clients order product   -->
+
+    <record model="ir.ui.view" id="clients_order_product_view">
+      <field name="name">clients_order_product.view</field>
+      <field name="model">storehouse.clients_order_product</field>
+      <field name="arch" type="xml">
+        <!--tree colors="red:out_of_stock == True;green:out_of_stock == False"-->
+        <tree>
+              <field name="id" string="Order Product Id"/>
+              <field name="product_id" string="Products"/>
+              <field name="ordered_model" string="Ordered Model"/>
+              <field name="quantity" string="Product Quantity" />
+              <field name="price" string="Price"/>
+              <field name="total" string="Total Price" />
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="clients_order_product_form_view">
+      <field name="name">clients_order_product.form</field>
+      <field name="model">storehouse.clients_order_product</field>
+      <field name="arch" type="xml">
+        <form string="clients_order_product form">
+          <sheet>
+            <group>
+              <field name="id" string="Order Product Id"/>
+              <!--field name="out_of_stock" string="Out Of Stock"/-->
+              <field name="product_id" string="Products" widget="one2many_tags" options="{'no_create_edit': True}"/>
+              <field name="ordered_model" string="Ordered Model"/>
+              <!--field name="clients_order_id" string="Clients Order ID" /-->
+              <field name="quantity" string="Product Quantity" />
+              <field name="total" string="Total Price" />
+              <field name="price" string="Price"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="storehouse_clients_order_product_action">
+      <field name="name">clients_order_product</field>
+      <field name="res_model">storehouse.clients_order_product</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">create the first client</p>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_clients_order_product_action_tree">
+      <field name="res_model">storehouse.clients_order_product</field>
+      <field name="view_mode">tree</field>
+      <field name="view_id" ref="clients_order_product_view"/>
+      <field name="act_window_id" ref="storehouse_clients_order_product_action"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_clients_order_product_action_form">
+      <field name="res_model">storehouse.clients_order_product</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="clients_order_product_form_view"/>
+      <field name="act_window_id" ref="storehouse_clients_order_product_action"/>
+    </record>
+
+<!--  clients_order_equipment   -->
+
+    <record model="ir.ui.view" id="clients_order_equipment_view_box_inventory">
+      <field name="name">clients_order_equipment.view</field>
+      <field name="model">storehouse.clients_order_equipment</field>
+      <field name="arch" type="xml">
+        <tree>
+              <field name="id"/>
+              <field name="product" string="Product"/>
+              <field name="box" string="Box" />
+              <field name="ordered_quantity" string="Ordered Quantity" />
+              <field name="current_quantity" string="Inventory Quantity"/>
+              <field name="reserved_quantity" string="Reserved Quantity"/>
+              <button name="change_reserved_quantity_plus" type="object" icon="fa-plus-circle" />
+              <button name="change_reserved_quantity_minus" type="object" icon="fa-minus-circle" />
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="clients_order_equipment_form_view_box_inventory">
+      <field name="name">clients_order_equipment.form</field>
+      <field name="model">storehouse.clients_order_equipment</field>
+      <field name="arch" type="xml">
+        <form string="clients_order_equipment form">
+          <sheet>
+            <group>
+              <field name="id"/>
+              <field name="product" string="Product"/>
+              <field name="box" string="Box" />
+              <field name="ordered_quantity" string="Ordered Quantity" />
+              <field name="current_quantity" string="Current Quantity"/>
+              <field name="reserved_quantity" string="Reserved Quantity"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="storehouse_clients_order_equipment_action_box_inventory">
+      <field name="name">Order Equipment</field>
+      <field name="res_model">storehouse.clients_order_equipment</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create"></p>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_clients_order_equipment_action_box_inventory_tree">
+      <field name="res_model">storehouse.clients_order_equipment</field>
+      <field name="view_mode">tree</field>
+      <field name="view_id" ref="clients_order_equipment_view_box_inventory"/>
+      <field name="act_window_id" ref="storehouse_clients_order_equipment_action_box_inventory"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_clients_order_equipment_action_box_inventory_form">
+      <field name="res_model">storehouse.clients_order_equipment</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="clients_order_equipment_form_view_box_inventory"/>
+      <field name="act_window_id" ref="storehouse_clients_order_equipment_action_box_inventory"/>
+    </record>
+
+<!--  items need 2 order   -->
+
+    <record model="ir.ui.view" id="items_need_2_order_view_box_inventory">
+      <field name="name">items_need_2_order.view</field>
+      <field name="model">storehouse.items_need_2_order</field>
+      <field name="arch" type="xml">
+        <tree>
+              <field name="id" string="Order Product Id"/>
+              <field name="clients_order_id" string="Order Id"/>
+              <field name="product_id" string="Product"/>
+              <field name="ordered_quantity" string="Ordered Quantity" />
+              <field name="missing_quantity" string="Missing Quantity" />
+              <field name="status" string="Status"/>
+              <field name="processed" string="Processed"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="items_need_2_order_form_view_box_inventory">
+      <field name="name">items_need_2_order.form</field>
+      <field name="model">storehouse.items_need_2_order</field>
+      <field name="arch" type="xml">
+        <form string="items_need_2_order form">
+          <sheet>
+            <group>
+              <field name="id" string="Order Product Id"/>
+              <field name="clients_order_id" string="Order Id"/>
+              <field name="product_id" string="Product"/>
+              <field name="ordered_quantity" string="Ordered Quantity" />
+              <field name="missing_quantity" string="Missing Quantity" />
+              <field name="status" string="Status"/>
+              <field name="processed" string="Processed"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="storehouse_items_need_2_order_action_box_inventory">
+      <field name="name">Items Must Be Ordered</field>
+      <field name="res_model">storehouse.items_need_2_order</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create"></p>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_items_need_2_order_action_box_inventory_tree">
+      <field name="res_model">storehouse.items_need_2_order</field>
+      <field name="view_mode">tree</field>
+      <field name="view_id" ref="items_need_2_order_view_box_inventory"/>
+      <field name="act_window_id" ref="storehouse_items_need_2_order_action_box_inventory"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_items_need_2_order_action_box_inventory_form">
+      <field name="res_model">storehouse.items_need_2_order</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="items_need_2_order_form_view_box_inventory"/>
+      <field name="act_window_id" ref="storehouse_items_need_2_order_action_box_inventory"/>
+    </record>
+
+<menuitem id="storehouse_menu_items_need_2_order_box_inventory" name="Items Must Be Ordered" parent="storehouse_system_settings_menu" action="storehouse_items_need_2_order_action_box_inventory" sequence="13"/>
+
+<!--  status   -->
+
+
+    <record model="ir.actions.act_window" id="storehouse_status_action">
+      <field name="name">status</field>
+      <field name="res_model">storehouse.status</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create"></p>
+      </field>
+    </record>
+
+
+    <!-- first level menu left side  for status-->
+    <!--menuitem id="storehouse_status_menu" name="Storehouse status" parent="main_storehouse_menu"/-->
+
+    <menuitem id="storehouse_menu_status" name="status" parent="storehouse_system_settings_menu" action="storehouse_status_action" sequence="14"/>
+
+<!--    sup_orders     -->
+    <record model="ir.ui.view" id="sup_order_view_box_inventory">
+      <field name="name">sup_order.view</field>
+      <field name="model">storehouse.sup_order</field>
+      <field name="arch" type="xml">
+        <tree default_order='create_date desc'>
+              <field name="order_name" string="Order Name"/>
+              <field name="ship_date" string="Ship Date"/>
+              <field name="arrival_date" string="Arrival Date"/>
+              <!--field name="" string=""/-->
+              <field name="status" string="Status"/>
+              <field name="id" string="Order Id"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="sup_order_form_view_box_inventory">
+      <field name="name">sup_order.form</field>
+      <field name="model">storehouse.sup_order</field>
+      <field name="arch" type="xml">
+        <form string="sup_order form">
+          <sheet>
+            <group>
+              <field name="order_name" string="Order Name"/>
+            </group>
+            <notebook>
+              <page string="Main Info">
+                <group>
+                  <field name="ship_date" string="Ship Date"/>
+                  <field name="arrival_date" string="Arrival Date"/>
+                  <field name="sup_order_product" string="Order Products"/>
+
+                  <field name="items_need_2_order" string="Items Need To Order" readonly="1">
+                    <tree create="false">
+                      <field name="id" string="ID"/>
+                      <field name="product_id" string="Product Name" attrs="{'readonly': True}"/>
+                      <field name="missing_quantity" string="Quantity" attrs="{'readonly': True}" type="char"/>
+                      <field name="clients_order_id" string="Client Order ID"/>
+                      <button name="remove_from_sup_order" type="object" icon="fa-trash-o"/>
+                      <!--field name="status" string="Status" attrs="{'readonly': True}"/>
+                      <field name="processed" string="Processed" attrs="{'readonly': True}"/-->
+                    </tree>
+                  </field>
+
+                  <!--field name="info" string="Info" widget="html"/-->
+                  <field name="status" string="Status"/>
+                  <!--field name="volume" string="Total Volume (ft3)"/>
+                  <field name="gross_weight" string="Total Weight (lb)"/>
+                  <field name="finished" string="Finished"/-->
+                  <field name="is_ordered" string="Is Ordered"/>
+                </group>
+              </page>
+
+              <page string="Log">
+                <group>
+                  <field name="log" nolabel="1" widget="html" readonly="1"/>
+                </group>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="storehouse_sup_order_action_box_inventory">
+      <field name="name">Supplier Orders</field>
+      <field name="res_model">storehouse.sup_order</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create"></p>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_sup_order_action_box_inventory_tree">
+      <field name="res_model">storehouse.sup_order</field>
+      <field name="view_mode">tree</field>
+      <field name="view_id" ref="sup_order_view_box_inventory"/>
+      <field name="act_window_id" ref="storehouse_sup_order_action_box_inventory"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_sup_order_action_box_inventory_form">
+      <field name="res_model">storehouse.sup_order</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="sup_order_form_view_box_inventory"/>
+      <field name="act_window_id" ref="storehouse_sup_order_action_box_inventory"/>
+    </record>
+
+    <!-- first level menu left side  for clients-->
+    <!--menuitem id="storehouse_sup_order_menu" name="Storehouse Supplier Orders" parent="main_storehouse_menu"/-->
+
+    <menuitem id="storehouse_menu_supplier_orders_box_inventory" name="Supplier Orders" parent="storehouse_box_inventory" action="storehouse_sup_order_action_box_inventory" sequence="15"/>
+
+<!-- sup_order_box_tmp_tmp -->
+
+    <record model="ir.ui.view" id="sup_order_box_tmp_view">
+      <field name="name">sup_order_box_tmp.view</field>
+      <field name="model">storehouse.sup_order_box_tmp</field>
+      <field name="arch" type="xml">
+        <tree>
+              <field name="id" string="ID"/>
+              <field name="box_id" string="Box Name"/>
+              <!--field name="box_name" string="Box Name"/-->
+              <field name="quantity" string="Quantity" type="char"/>
+              <!--field name="box_volume" string="Box Volume" type="char"/>
+              <field name="box_weight" string="Box Weight" type="char"/-->
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="sup_order_box_tmp_form_view">
+      <field name="name">sup_order_box_tmp.form</field>
+      <field name="model">storehouse.sup_order_box_tmp</field>
+      <field name="arch" type="xml">
+        <form string="sup_order_box_tmp form">
+          <sheet>
+            <group>
+              <field name="box_id" string="Box" options="{'no_quick_create': True}"/>
+              <field name="quantity" string="Quantity"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="storehouse_sup_order_box_tmp_action">
+      <field name="name">sup_order_box_tmp</field>
+      <field name="res_model">storehouse.sup_order_box_tmp</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create"></p>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_sup_order_box_tmp_action_tree">
+      <field name="res_model">storehouse.sup_order_box_tmp</field>
+      <field name="view_mode">tree</field>
+      <field name="view_id" ref="sup_order_box_tmp_view"/>
+      <field name="act_window_id" ref="storehouse_sup_order_box_tmp_action"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_sup_order_box_tmp_action_form">
+      <field name="res_model">storehouse.sup_order_box_tmp</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="sup_order_box_tmp_form_view"/>
+      <field name="act_window_id" ref="storehouse_sup_order_box_tmp_action"/>
+    </record>
+
+<!-- sup_order_box -->
+
+    <record model="ir.ui.view" id="sup_order_box_view">
+      <field name="name">sup_order_box.view</field>
+      <field name="model">storehouse.sup_order_box</field>
+      <field name="arch" type="xml">
+        <tree>
+              <field name="id" string="ID"/>
+              <field name="box_id" string="Box Name"/>
+              <!--field name="box_name" string="Box Name"/-->
+              <field name="quantity" string="Quantity" type="char"/>
+              <!--field name="box_volume" string="Box Volume" type="char"/>
+              <field name="box_weight" string="Box Weight" type="char"/-->
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="sup_order_box_form_view">
+      <field name="name">sup_order_box.form</field>
+      <field name="model">storehouse.sup_order_box</field>
+      <field name="arch" type="xml">
+        <form string="sup_order_box form">
+          <sheet>
+            <group>
+              <field name="box_id" string="Box" options="{'no_quick_create': True}"/>
+              <field name="quantity" string="Quantity"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="storehouse_sup_order_box_action">
+      <field name="name">sup_order_box</field>
+      <field name="res_model">storehouse.sup_order_box</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create"></p>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_sup_order_box_action_tree">
+      <field name="res_model">storehouse.sup_order_box</field>
+      <field name="view_mode">tree</field>
+      <field name="view_id" ref="sup_order_box_view"/>
+      <field name="act_window_id" ref="storehouse_sup_order_box_action"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_sup_order_box_action_form">
+      <field name="res_model">storehouse.sup_order_box</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="sup_order_box_form_view"/>
+      <field name="act_window_id" ref="storehouse_sup_order_box_action"/>
+    </record>
+
+<!-- sup_order_product -->
+
+    <record model="ir.ui.view" id="sup_order_product_view">
+      <field name="name">sup_order_product.view</field>
+      <field name="model">storehouse.sup_order_product</field>
+      <field name="arch" type="xml">
+        <tree>
+              <field name="id" string="ID"/>
+              <field name="product_id" string="Product Name"/>
+              <field name="quantity" string="Quantity" type="char"/>
+              <!--field name="box_volume" string="Box Volume" type="char"/>
+              <field name="box_weight" string="Box Weight" type="char"/-->
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="sup_order_product_form_view">
+      <field name="name">sup_order_product.form</field>
+      <field name="model">storehouse.sup_order_product</field>
+      <field name="arch" type="xml">
+        <form string="sup_order_product form">
+          <sheet>
+            <group>
+              <field name="product_id" string="Product" options="{'no_quick_create': True}"/>
+              <field name="quantity" string="Quantity" type="char"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="storehouse_sup_order_product_action">
+      <field name="name">sup_order_product</field>
+      <field name="res_model">storehouse.sup_order_product</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create"></p>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_sup_order_product_action_tree">
+      <field name="res_model">storehouse.sup_order_product</field>
+      <field name="view_mode">tree</field>
+      <field name="view_id" ref="sup_order_product_view"/>
+      <field name="act_window_id" ref="storehouse_sup_order_product_action"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_sup_order_product_action_form">
+      <field name="res_model">storehouse.sup_order_product</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="sup_order_product_form_view"/>
+      <field name="act_window_id" ref="storehouse_sup_order_product_action"/>
+    </record>
+
+<!-- inventory_action -->
+
+    <record model="ir.ui.view" id="inventory_action_view">
+      <field name="name">inventory_action.view</field>
+      <field name="model">storehouse.inventory_action</field>
+      <field name="arch" type="xml">
+        <tree create="false" delete="false">
+              <field name="id" string="ID"/>
+              <field name="box_barcode" string="Box Barcode"/>
+              <field name="cell_id" string="Cell ID"/>
+              <field name="status" string="Status"/>
+              <field name="action" string="Action num" type="char"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="inventory_action_form_view">
+      <field name="name">inventory_action.form</field>
+      <field name="model">storehouse.inventory_action</field>
+      <field name="arch" type="xml">
+        <form string="inventory_action form" create="false" delete="false" edit="false">
+          <sheet>
+            <group>
+              <field name="id" string="ID"/>
+              <field name="box_barcode" string="Box Barcode"/>
+              <field name="cell_id" string="Cell ID"/>
+              <field name="status" string="Status"/>
+              <field name="action" string="Action num"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="storehouse_inventory_action_action">
+      <field name="name">inventory_action</field>
+      <field name="res_model">storehouse.inventory_action</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create"></p>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_inventory_action_action_tree">
+      <field name="res_model">storehouse.inventory_action</field>
+      <field name="view_mode">tree</field>
+      <field name="view_id" ref="inventory_action_view"/>
+      <field name="act_window_id" ref="storehouse_inventory_action_action"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="storehouse_inventory_action_action_form">
+      <field name="res_model">storehouse.inventory_action</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="inventory_action_form_view"/>
+      <field name="act_window_id" ref="storehouse_inventory_action_action"/>
+    </record>
+
+    <!-- first level menu left side  for inventory_action-->
+    <!--menuitem id="storehouse_inventory_action_menu" name="Storehouse Inventory Action" parent="main_storehouse_menu"/-->
+
+    <menuitem id="storehouse_menu_inventory_action" name="Inventory Action" parent="storehouse_system_settings_menu" action="storehouse_inventory_action_action" sequence="16"/>
+  </data>
+</odoo>
+<!-- -->
+<!-- -->
+<!-- -->

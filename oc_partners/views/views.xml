@@ -1,0 +1,82 @@
+<odoo>
+  <data>
+    <menuitem name="OC Partners" id="oc_partners.menu_root"/>
+<!-- Opencart Partners -->
+
+    <record model="ir.ui.view" id="oc_partners.opencart_settings_list_view">
+      <field name="name">Opencart Partners vendor list</field>
+      <field name="model">opencart.settings</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="customer"/>
+          <field name="status" string="Status"/>
+          <field name="upload_status" string="Upload Status"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="oc_partners.opencart_list_form_view">
+      <field name="name">Opencart Partner form</field>
+      <field name="model">opencart.settings</field>
+      <field name="arch" type="xml">
+        <form string="Opencart Partner vendor form">
+          <sheet>
+            <label string="Connection Settings:" style="color:Red;"/>
+            <group>
+              <field name="name" string="Marketplace name"/>
+              <field name="customer" string="Customer" options="{'no_open': True, 'no_create_edit': True}"/>
+              <!--<field name="app_id" string="Application ID"/>-->
+              <field name="user_name" string="User Name"/>
+              <field name="key" string="Key"/>
+              <field name="url" string="URL"/>
+            </group>
+            <label string="Enable or Disable Account in ODOO:" style="color:Red;"/>
+            <group>
+              <field name="status" string="Status"/>
+            </group>
+            <label string="Enable or Disable Update Products:" style="color:Red;"/>
+            <group>
+              <field name="upload_status" string="Status"/>
+            </group>
+            <group>
+              <button name="check_connection" string="Test Connection" type="object" class="oe_highlight"/>
+            </group>
+            <group>
+             <!-- <button name="main_opencart_job_orders" string="TEST get orders" type="object" class="oe_highlight"/> -->
+             <!-- <button name="main_opencart_job_quantity" string="TEST get update quantity" type="object" class="oe_highlight"/> -->
+             <button name="main_opencart_job_products" string="TEST get products" type="object" class="oe_highlight"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    
+    <record model="ir.actions.act_window" id="oc_partners.opencart_settings_action_window">
+      <field name="name">Opencart Partners marketplaces</field>
+      <field name="res_model">opencart.settings</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record model="ir.actions.act_window.view" id="oc_partners_vendor_action_tree">
+      <field name="res_model">opencart.settings</field>
+      <field name="view_mode">tree</field>
+      <field name="view_id" ref="oc_partners.opencart_settings_list_view"/>
+      <field name="act_window_id" ref="oc_partners.opencart_settings_action_window"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="oc_partners_vendor_action_form">
+      <field name="res_model">opencart.settings</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="oc_partners.opencart_list_form_view"/>
+      <field name="act_window_id" ref="oc_partners.opencart_settings_action_window"/>
+    </record>
+
+    <menuitem name="Opencart Partners account information" id="oc_partners.menu_list" parent="oc_partners.menu_root"
+              action="oc_partners.opencart_settings_action_window"/>
+
+
+  </data>
+</odoo>

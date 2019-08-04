@@ -1,0 +1,515 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/home/igor/time",
+			"settings":
+			{
+				"buffer_size": 24149,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "__manifest__.py",
+			"settings":
+			{
+				"buffer_size": 902,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "models/models.py",
+			"settings":
+			{
+				"buffer_size": 79983,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/views.xml",
+			"settings":
+			{
+				"buffer_size": 14527,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/templates.xml",
+			"settings":
+			{
+				"buffer_size": 2189,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/box_inventory.xml",
+			"settings":
+			{
+				"buffer_size": 69248,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink\n\naccess_storehouse_no_groups_settings,storehouse.settings,model_storehouse_settings,,1,0,0,0\naccess_storehouse_ro_user_settings,storehouse.settings,model_storehouse_settings,storehouse_ro_user,1,0,0,0\naccess_storehouse_super_admin_settings,storehouse.settings,model_storehouse_settings,storehouse_super_admin,1,1,1,1\n\naccess_storehouse_admin_product,storehouse.product,model_storehouse_product,storehouse_admin,1,1,1,1\naccess_storehouse_admin_product_equipment,storehouse.product_equipment,model_storehouse_product_equipment,storehouse_admin,1,1,1,1\naccess_storehouse_admin_box,storehouse.box,model_storehouse_box,storehouse_admin,1,1,1,1\naccess_storehouse_admin_manufacturer,storehouse.manufacturer,model_storehouse_manufacturer,storehouse_admin,1,1,1,1\naccess_storehouse_admin_company,storehouse.company,model_storehouse_company,storehouse_admin,1,1,1,1\naccess_storehouse_admin_brand,storehouse.brand,model_storehouse_brand,storehouse_admin,1,1,1,1\naccess_storehouse_admin_inventory,storehouse.inventory,model_storehouse_inventory,storehouse_admin,1,1,1,1\naccess_storehouse_admin_cell,storehouse.cell,model_storehouse_cell,storehouse_admin,1,1,1,1\naccess_storehouse_admin_suppliers,storehouse.suppliers,model_storehouse_suppliers,storehouse_admin,1,1,1,1\naccess_storehouse_admin_price,storehouse.price,model_storehouse_price,storehouse_admin,1,1,1,1\naccess_storehouse_admin_customer,storehouse.customer,model_storehouse_customer,storehouse_admin,1,1,1,1\naccess_storehouse_admin_clients,storehouse.clients,model_storehouse_clients,storehouse_admin,1,1,1,1\naccess_storehouse_admin_clients_order,storehouse.clients_order,model_storehouse_clients_order,storehouse_admin,1,1,1,1\naccess_storehouse_admin_clients_order_product,storehouse.clients_order_product,model_storehouse_clients_order_product,storehouse_admin,1,1,1,1\naccess_storehouse_admin_status,storehouse.status,model_storehouse_status,storehouse_admin,1,1,1,1\naccess_storehouse_admin_sup_order,storehouse.sup_order,model_storehouse_sup_order,storehouse_admin,1,1,1,1\naccess_storehouse_admin_sup_order_box,storehouse.sup_order_box,model_storehouse_sup_order_box,storehouse_admin,1,1,1,1\naccess_storehouse_admin_sup_order_product,storehouse.sup_order_product,model_storehouse_sup_order_product,storehouse_admin,1,1,1,1\naccess_storehouse_admin_sup_order_box_tmp,storehouse.sup_order_box_tmp,model_storehouse_sup_order_box_tmp,storehouse_admin,1,1,1,1\naccess_storehouse_admin_inventory_action,storehouse.inventory_action,model_storehouse_inventory_action,storehouse_admin,1,1,1,1\naccess_storehouse_admin_product_names,storehouse.product_names,model_storehouse_product_names,storehouse_admin,1,1,1,1\naccess_storehouse_admin_product_models,storehouse.product_models,model_storehouse_product_models,storehouse_admin,1,1,1,1\naccess_storehouse_admin_items_need_2_order,storehouse.items_need_2_order,model_storehouse_items_need_2_order,storehouse_admin,1,1,1,1\naccess_storehouse_admin_barcode,storehouse.barcode,model_storehouse_barcode,storehouse_admin,1,1,1,1\naccess_storehouse_admin_products_2_update,storehouse.products_2_update,model_storehouse_products_2_update,storehouse_admin,1,1,1,1\n\naccess_storehouse_super_admin_products_2_update,storehouse.products_2_update,model_storehouse_products_2_update,storehouse_super_admin,1,1,1,1\n\naccess_storehouse_super_admin_msg_3rd_party_stores,storehouse.msg_3rd_party_stores,model_storehouse_msg_3rd_party_stores,storehouse_super_admin,1,1,1,1\n\naccess_storehouse_ro_user_inventory_action,storehouse.inventory_action,model_storehouse_inventory_action,storehouse_ro_user,1,1,1,1\n\n",
+			"file": "security/ir.model.access.csv",
+			"file_size": 3648,
+			"file_write_time": 131903297780000000,
+			"settings":
+			{
+				"buffer_size": 3648,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/igor/addons/storehouse/views/templates.xml",
+		"/home/igor/addons/website_mail/__init__.py",
+		"/home/igor/time",
+		"/home/igor/sublime_projects/storehouse.sublime-workspace",
+		"/home/igor/addons/storehouse/security/ir.model.access.csv",
+		"/home/igor/addons/storehouse/views/box_inventory.xml",
+		"/home/igor/addons/storehouse/__manifest__.py",
+		"/home/igor/addons/storehouse/models/models.py",
+		"/home/igor/addons/storehouse/views/views.xml",
+		"/home/igor/addons/storehouse/__init__.py",
+		"/home/igor/addons/storehouse/models/__init__.py",
+		"/home/igor/addons/storehouse/views/products_virtual.xml"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"order_name",
+			"make_equipment_filled",
+			"Product Equipment Error! Please fill the \"Product Equipment!\" ",
+			"items_need_2_order",
+			"customer_order_number",
+			"try",
+			"_self",
+			"record",
+			"rollback_order_button",
+			"create_update_record",
+			"is_new_file",
+			"check_file_file_in_db",
+			"create_update_record",
+			"create",
+			"products_2_update",
+			"write",
+			"'),\n",
+			"items_need_2_order",
+			"sel",
+			"selected",
+			"context",
+			"filter",
+			"api.constrains",
+			"доработка модуля amazon"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/home/igor/time",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 24149,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								24135,
+								24135
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 7395.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "__manifest__.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 902,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								555,
+								555
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "models/models.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 79983,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								48150,
+								48150
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 22287.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "views/views.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14527,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7144,
+								7144
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 144.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "views/templates.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2189,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 408.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "models/models.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 79983,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								52322,
+								52322
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "views/box_inventory.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 69248,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2163,
+								2163
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 816.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "security/ir.model.access.csv",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3648,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1429,
+								1429
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.6328125,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "storehouse.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 1,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 100.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

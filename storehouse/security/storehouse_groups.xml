@@ -1,0 +1,36 @@
+<odoo>
+	<data>
+		<!-- Creating a Group Category -->
+		<record model="ir.module.category" id="storehouse_security_management">
+			<field name="name">Storehouse</field>
+			<field name="sequence">1</field>
+		</record>
+
+		<!-- Adding a Groups to the Group Category -->
+		<record id="storehouse_super_admin" model="res.groups">
+			<field name="name">Storehouse super admin (technical tables)</field>
+			<field name="category_id" ref="storehouse_security_management"/>
+		</record>
+
+		<record id="storehouse_admin" model="res.groups">
+			<field name="name">Storehouse_admin(all rwcu)</field>
+			<field name="category_id" ref="storehouse_security_management"/>
+		</record>
+
+		<record id="storehouse_ro_user" model="res.groups">
+			<field name="name">Storehouse_ro_user(all r***)</field>
+			<field name="category_id" ref="storehouse_security_management"/>
+		</record>
+		<!-- groups for separate views -->
+		<record id="storehouse_box_inventory_user" model="res.groups">
+			<field name="name">Storehouse_box_inventory</field>
+			<field name="category_id" ref="storehouse_security_management"/>
+		</record>
+
+		<record id="storehouse_products_virtual_user" model="res.groups">
+			<field name="name">Storehouse_products_virtual</field>
+			<field name="category_id" ref="storehouse_security_management"/>
+		</record>
+
+	</data>
+</odoo>
